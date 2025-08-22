@@ -3,8 +3,12 @@ name : my first workflow
 on: push
 
 jobs:
-  print:
-    runs-on: ubentu-latest
-
-    steps:
-      - run: echo "Hello evryone , Good Morning"
+ build:
+ runs-on: ubuntu-latest
+ steps:
+ - run: echo "Building app"
+ test:
+ runs-on: ubuntu-latest
+ needs: build # This job runs **after** build
+ steps:
+ - run: echo "Running tests"
