@@ -1,0 +1,10 @@
+name : my first workflow
+
+on: push
+
+jobs:
+  print:
+    runs-on: ubentu-latest
+
+    steps:
+      - run: echo "Hello evryone , Good Morning"
